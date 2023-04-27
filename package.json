@@ -1,0 +1,65 @@
+{
+  "name": "changelog-safeguard",
+  "version": "0.0.0",
+  "description": "Checks/updates the CHANGELOG.md file",
+  "keywords": [
+    "changelog",
+    "npm",
+    "version"
+  ],
+  "scripts": {
+    "test": "jest --coverage --runInBand --verbose",
+    "dev": "ts-node src",
+    "lint": "eslint src/**/*.ts",
+    "prebuild": "rimraf dist",
+    "build": "tsc --p ./tsconfig.build.json && tsc-alias",
+    "start": "node dist",
+    "preversion": "npm run test -- --silent && npm run build && node dist check",
+    "version": "node dist -- update && git add CHANGELOG.md"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "main": "dist/index.js",
+  "bin": {
+    "changelog": "dist/index.js"
+  },
+  "author": {
+    "name": "Adrien Febvay",
+    "email": "adrien.febvay@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adrien-febvay/changelog.git"
+  },
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "cmd": "^0.1.0",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.5.0",
+    "jest-runner-eslint": "^2.0.0",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.0",
+    "start": "^5.1.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.6",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4"
+  }
+}
