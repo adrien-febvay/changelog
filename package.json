@@ -2,6 +2,7 @@
   "name": "changelog-safeguard",
   "version": "1.0.0",
   "description": "Checks/updates the CHANGELOG.md file",
+  "private": false,
   "keywords": [
     "changelog",
     "npm",
@@ -61,5 +62,12 @@
     "tsc-alias": "^1.8.6",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
