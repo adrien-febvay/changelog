@@ -1,4 +1,4 @@
-# ChangeLog
+# ChangeLog Safeguard
 
 ![CI Tests status](https://github.com/adrien-febvay/changelog/actions/workflows/ci-tests.yml/badge.svg)
 
