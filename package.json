@@ -2,7 +2,6 @@
   "name": "changelog-safeguard",
   "version": "1.0.0",
   "description": "Checks/updates the CHANGELOG.md file",
-  "private": false,
   "keywords": [
     "changelog",
     "npm",
@@ -15,7 +14,7 @@
     "prebuild": "rimraf dist",
     "build": "tsc --p ./tsconfig.build.json && tsc-alias",
     "start": "node dist",
-    "preversion": "npm run test -- --silent && npm run build && node dist check",
+    "preversion": "node dist check && npm run test -- --silent && npm run build",
     "version": "node dist -- update && git add CHANGELOG.md"
   },
   "files": [
@@ -35,13 +34,12 @@
     "type": "git",
     "url": "https://github.com/adrien-febvay/changelog.git"
   },
+  "bugs": {
+    "url": "https://github.com/adrien-febvay/changelog/issues",
+    "email": "adrien.febvay@gmail.com"
+  },
+  "homepage": "https://github.com/adrien-febvay/changelog#readme",
   "license": "MIT",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT"
-    }
-  ],
   "devDependencies": {
     "@types/jest": "^29.5.1",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
