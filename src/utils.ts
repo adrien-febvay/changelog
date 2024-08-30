@@ -12,8 +12,8 @@ export namespace _ {
     let _width = width;
     if (_width === 0) {
       const pattern = head ? /(^|\n)( *)(?=\S)/g : /(\n)( *)(?=\S)/g;
-      const matches = [...str.matchAll(pattern)] as [string, string, string][];
-      const indents = matches.map((match) => match[2].length);
+      const matches = [...str.matchAll(pattern)];
+      const indents = matches.map((match) => match[2]?.length || 0);
       const min = Math.min(...indents);
       _width = matches.length && -min;
     }
