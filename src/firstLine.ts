@@ -48,7 +48,7 @@ export namespace firstLine {
       reader.on('close', resolve);
       input.on('error', reject);
     });
-    input.destroy();
-    output.destroy();
+    input.close();
+    output.close();
   }
 }
