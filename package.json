@@ -9,12 +9,13 @@
   ],
   "scripts": {
     "test": "jest --coverage --runInBand --verbose",
+    "test:silent": "jest --coverage --runInBand --silent",
     "dev": "ts-node src",
     "lint": "eslint src/**/*.ts",
     "prebuild": "rimraf dist",
     "build": "tsc --p ./tsconfig.build.json && tsc-alias",
     "start": "node dist",
-    "preversion": "node dist check && npm run test -- --silent && npm run build",
+    "preversion": "node dist check && npm run test:silent && npm run build",
     "version": "node dist -- update && git add CHANGELOG.md"
   },
   "files": [
