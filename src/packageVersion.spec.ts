@@ -21,9 +21,7 @@ describe('The ChangeLog utility main script', () => {
 
   it('rejects invalid package', () => {
     tempDir.set('package.json', 'null');
-    expect(getVersion()).toThrow(
-      'Invalid package.json: expected object, got null',
-    );
+    expect(getVersion()).toThrow('Invalid package.json: expected object, got null');
   });
 
   it('rejects package without version', () => {
@@ -33,15 +31,11 @@ describe('The ChangeLog utility main script', () => {
 
   it('rejects package with invalid version', () => {
     tempDir.set('package.json', '{ "version": 1 }');
-    expect(getVersion()).toThrow(
-      'Invalid version in package.json: expected string, got number',
-    );
+    expect(getVersion()).toThrow('Invalid version in package.json: expected string, got number');
   });
 
   it('rejects package with invalid version pattern', () => {
     tempDir.set('package.json', '{ "version": "1" }');
-    expect(getVersion()).toThrow(
-      'Invalid version in package.json: expected pattern like 0.0.0[-pre], got "1"',
-    );
+    expect(getVersion()).toThrow('Invalid version in package.json: expected pattern like 0.0.0[-pre], got "1"');
   });
 });

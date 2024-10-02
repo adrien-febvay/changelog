@@ -50,10 +50,7 @@ export namespace type {
   export function isError(val: unknown): val is Error {
     return (
       val instanceof Error ||
-      (isDict(val) &&
-        typeof val.message === 'string' &&
-        typeof val.name === 'string' &&
-        typeof val.stack === 'string')
+      (isDict(val) && typeof val.message === 'string' && typeof val.name === 'string' && typeof val.stack === 'string')
     );
   }
 

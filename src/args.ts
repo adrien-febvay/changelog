@@ -34,9 +34,7 @@ export namespace args {
    * @param param Parameter to parse.
    * @returns Parsed utility mode.
    */
-  export function parseMode(
-    param?: string | false,
-  ): (typeof modes)[number] | null {
+  export function parseMode(param?: string | false): (typeof modes)[number] | null {
     if (param) {
       for (const mode of modes) {
         const alias = mode.slice(0, 1);

@@ -30,11 +30,7 @@ export namespace firstLine {
    * @param newline New first line to put in the copy.
    * @returns A void promise.
    */
-  export async function set(
-    inpath: string,
-    outpath: string,
-    newline: string,
-  ): Promise<void> {
+  export async function set(inpath: string, outpath: string, newline: string): Promise<void> {
     const input = fs.createReadStream(inpath);
     const output = fs.createWriteStream(outpath);
     const reader = readline.createInterface({ input });

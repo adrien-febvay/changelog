@@ -28,9 +28,7 @@ describe('The ChangeLog utility main script', () => {
   });
 
   it('rejects invalid arguments', async () => {
-    await expect(__main('foo')).rejects.toThrow(
-      `Invalid parameters: foo\n\n${main.SYNTAX}`,
-    );
+    await expect(__main('foo')).rejects.toThrow(`Invalid parameters: foo\n\n${main.SYNTAX}`);
   });
 
   it('outputs its version', async () => {
@@ -71,8 +69,6 @@ describe('The ChangeLog utility main script', () => {
 
   it('rejects when the ChangeLog utility has no package version', async () => {
     Object.assign(main, { npm_package_version: void 0 });
-    await expect(__main('version')).rejects.toThrow(
-      'Utility version not available',
-    );
+    await expect(__main('version')).rejects.toThrow('Utility version not available');
   });
 });

@@ -10,8 +10,6 @@ describe('The entry point', () => {
   });
 
   it('exits with an error status', () => {
-    expect(() => execSync('node dist foo', { stdio: 'ignore' })).toThrow(
-      'Command failed: node dist foo',
-    );
+    expect(() => execSync('node dist foo', { stdio: 'ignore' })).toThrow('Command failed: node dist foo');
   });
 });
